@@ -1,0 +1,1 @@
+while sleep .0001; do hdhomerun_config 192.168.0.21 get /tuner0/status | awk '{print $3, $4}' | sed 's/ss=//' | sed 's/snq=//' | tee output.txt; done
