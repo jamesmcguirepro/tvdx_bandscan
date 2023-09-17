@@ -1,1 +1,3 @@
 while sleep .0001; do hdhomerun_config 192.168.0.21 get /tuner0/status | awk '{print $3, $4, $5}' | sed 's/ss=//' | sed 's/snq=//' | sed 's/seq=//' >> output.txt; done
+
+ cat output.txt | sort -n -k 2 output.txt | head -n 1 
